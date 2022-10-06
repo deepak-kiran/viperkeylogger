@@ -17,8 +17,8 @@ __|__/  /_/  _  .___/\___//_/ |_|
                               /____/             /____/  /____/                           
 ''')
 
-email = 'chraladeepak@gmail.com'
-password = 'mspiwgnrwsmzfwhs'
+email = 'learn2hack4ever@gmail.com'
+password = 'vellnzvxbeugacqw'
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.login(email, password)
 
