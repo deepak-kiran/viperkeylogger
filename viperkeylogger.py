@@ -18,7 +18,7 @@ __|__/  /_/  _  .___/\___//_/ |_|
 ''')
 
 email = input('Enter Email to send Data')
-password = getpass.getpass(promt='Password: ', stream=None)
+password = getpass.getpass(promt='App Password(Created in Google manage): ', stream=None)
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.login(email, password)
 
